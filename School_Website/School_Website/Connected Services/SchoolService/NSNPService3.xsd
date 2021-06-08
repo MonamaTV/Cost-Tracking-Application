@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/School_Service" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/School_Service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ourEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:School">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ourEntity" nillable="true" type="tns:ourEntity" />
+  <xs:complexType name="School">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="A_No" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AreaOffice" nillable="true" type="tns:AreaOffice" />
+      <xs:element minOccurs="0" name="EMIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileInformations" nillable="true" type="tns:ArrayOfFileInformation" />
+      <xs:element minOccurs="0" name="P_No" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Provincial" nillable="true" type="tns:Provincial" />
+      <xs:element minOccurs="0" name="S_Budget" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="S_CellPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S_Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S_No_learners" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S_PrincipalName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S_Reports" nillable="true" type="tns:ArrayOfS_Report" />
+      <xs:element minOccurs="0" name="S_TellNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="S_Type" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="School" nillable="true" type="tns:School" />
+  <xs:complexType name="AreaOffice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="A_Cellphone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="A_Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="A_Manager" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="A_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="A_No" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="A_NumSchools" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="A_Reports" nillable="true" type="tns:ArrayOfA_Report" />
+      <xs:element minOccurs="0" name="A_Tellphone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AreaSchoolMessages" nillable="true" type="tns:ArrayOfAreaSchoolMessage" />
+      <xs:element minOccurs="0" name="D_No" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="District" nillable="true" type="tns:District" />
+      <xs:element minOccurs="0" name="Schools" nillable="true" type="tns:ArrayOfSchool" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaOffice" nillable="true" type="tns:AreaOffice" />
+  <xs:complexType name="ArrayOfA_Report">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="A_Report" nillable="true" type="tns:A_Report" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfA_Report" nillable="true" type="tns:ArrayOfA_Report" />
+  <xs:complexType name="A_Report">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="A_No" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Allocation" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="AreaOffice" nillable="true" type="tns:AreaOffice" />
+      <xs:element minOccurs="0" name="Balance" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="BankCharges" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Expenditure" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Month" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="R_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Schools_Submitted" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Submission_Date" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="A_Report" nillable="true" type="tns:A_Report" />
+  <xs:complexType name="ArrayOfAreaSchoolMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AreaSchoolMessage" nillable="true" type="tns:AreaSchoolMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAreaSchoolMessage" nillable="true" type="tns:ArrayOfAreaSchoolMessage" />
+  <xs:complexType name="AreaSchoolMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="A_No" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AreaOffice" nillable="true" type="tns:AreaOffice" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="M_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaSchoolMessage" nillable="true" type="tns:AreaSchoolMessage" />
+  <xs:complexType name="District">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaOffices" nillable="true" type="tns:ArrayOfAreaOffice" />
+      <xs:element minOccurs="0" name="D_Cellphone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="D_Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="D_Manager" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="D_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="D_No" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="D_NumAreas" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="D_Reports" nillable="true" type="tns:ArrayOfD_Report" />
+      <xs:element minOccurs="0" name="D_Tellphone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DistrictAreaMessages" nillable="true" type="tns:ArrayOfDistrictAreaMessage" />
+      <xs:element minOccurs="0" name="P_No" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Provincial" nillable="true" type="tns:Provincial" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="District" nillable="true" type="tns:District" />
+  <xs:complexType name="ArrayOfAreaOffice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AreaOffice" nillable="true" type="tns:AreaOffice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAreaOffice" nillable="true" type="tns:ArrayOfAreaOffice" />
+  <xs:complexType name="ArrayOfD_Report">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="D_Report" nillable="true" type="tns:D_Report" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfD_Report" nillable="true" type="tns:ArrayOfD_Report" />
+  <xs:complexType name="D_Report">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Allocation" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BankCharges" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="D_No" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="District" nillable="true" type="tns:District" />
+      <xs:element minOccurs="0" name="Expenditure" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Month" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="R_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="D_Report" nillable="true" type="tns:D_Report" />
+  <xs:complexType name="ArrayOfDistrictAreaMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DistrictAreaMessage" nillable="true" type="tns:DistrictAreaMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDistrictAreaMessage" nillable="true" type="tns:ArrayOfDistrictAreaMessage" />
+  <xs:complexType name="DistrictAreaMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="D_No" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="District" nillable="true" type="tns:District" />
+      <xs:element minOccurs="0" name="M_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DistrictAreaMessage" nillable="true" type="tns:DistrictAreaMessage" />
+  <xs:complexType name="Provincial">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Districts" nillable="true" type="tns:ArrayOfDistrict" />
+      <xs:element minOccurs="0" name="Num_Areas" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Num_Districts" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="P_Cellphone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="P_Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="P_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="P_No" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="P_Tellphone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Schools" nillable="true" type="tns:ArrayOfSchool" />
+      <xs:element minOccurs="0" name="p_Manageer" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Provincial" nillable="true" type="tns:Provincial" />
+  <xs:complexType name="ArrayOfDistrict">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="District" nillable="true" type="tns:District" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDistrict" nillable="true" type="tns:ArrayOfDistrict" />
+  <xs:complexType name="ArrayOfSchool">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="School" nillable="true" type="tns:School" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSchool" nillable="true" type="tns:ArrayOfSchool" />
+  <xs:complexType name="ArrayOfFileInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FileInformation" nillable="true" type="tns:FileInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFileInformation" nillable="true" type="tns:ArrayOfFileInformation" />
+  <xs:complexType name="FileInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContentLength" type="xs:double" />
+      <xs:element minOccurs="0" name="ContentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="School" nillable="true" type="tns:School" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FileInformation" nillable="true" type="tns:FileInformation" />
+  <xs:complexType name="ArrayOfS_Report">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="S_Report" nillable="true" type="tns:S_Report" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfS_Report" nillable="true" type="tns:ArrayOfS_Report" />
+  <xs:complexType name="S_Report">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Allocation" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="AvgBudget" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="AvgLearnerFed" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Balance" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="BankCharges" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ClosingBalance" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Expenditure" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Food" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Gas_Wood" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Greenies" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Honorarium" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Month" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumDays" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="R_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="School" nillable="true" type="tns:School" />
+      <xs:element minOccurs="0" name="Submission_Date" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="S_Report" nillable="true" type="tns:S_Report" />
+  <xs:complexType name="ourProvincial">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Provincial">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ourProvincial" nillable="true" type="tns:ourProvincial" />
+  <xs:complexType name="ArrayOfTempReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TempReport" nillable="true" type="tns:TempReport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTempReport" nillable="true" type="tns:ArrayOfTempReport" />
+  <xs:complexType name="TempReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BalanceAMB" type="xs:double" />
+      <xs:element minOccurs="0" name="TempAllocated" type="xs:double" />
+      <xs:element minOccurs="0" name="TempAreaNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TempAvgBudget" type="xs:double" />
+      <xs:element minOccurs="0" name="TempAvgLearners" type="xs:double" />
+      <xs:element minOccurs="0" name="TempBalance" type="xs:double" />
+      <xs:element minOccurs="0" name="TempBankBalance" type="xs:double" />
+      <xs:element minOccurs="0" name="TempBudget" type="xs:double" />
+      <xs:element minOccurs="0" name="TempCharges" type="xs:double" />
+      <xs:element minOccurs="0" name="TempClosingBalance" type="xs:double" />
+      <xs:element minOccurs="0" name="TempDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TempDays" type="xs:double" />
+      <xs:element minOccurs="0" name="TempExpenses" type="xs:double" />
+      <xs:element minOccurs="0" name="TempFood" type="xs:double" />
+      <xs:element minOccurs="0" name="TempHonori" type="xs:double" />
+      <xs:element minOccurs="0" name="TempMonthlySpent" type="xs:double" />
+      <xs:element minOccurs="0" name="TempNumLearners" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TempSchoolCellphone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TempSchoolEMIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TempSchoolName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TempSchoolTelephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TempSchoolType" type="xs:int" />
+      <xs:element minOccurs="0" name="TempVeges" type="xs:double" />
+      <xs:element minOccurs="0" name="TempWood" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TempReport" nillable="true" type="tns:TempReport" />
+  <xs:complexType name="SchoolReport">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:S_Report">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SchoolReport" nillable="true" type="tns:SchoolReport" />
+  <xs:complexType name="FileInfos">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:FileInformation">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FileInfos" nillable="true" type="tns:FileInfos" />
+  <xs:complexType name="ArrayOfSchoolReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SchoolReport" nillable="true" type="tns:SchoolReport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSchoolReport" nillable="true" type="tns:ArrayOfSchoolReport" />
+  <xs:complexType name="ourArea">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AreaOffice">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ourArea" nillable="true" type="tns:ourArea" />
+  <xs:complexType name="ourDistrict">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:District">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ourDistrict" nillable="true" type="tns:ourDistrict" />
+  <xs:complexType name="AreaReport">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:A_Report">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AreaReport" nillable="true" type="tns:AreaReport" />
+  <xs:complexType name="ArrayOfourDistrict">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ourDistrict" nillable="true" type="tns:ourDistrict" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfourDistrict" nillable="true" type="tns:ArrayOfourDistrict" />
+  <xs:complexType name="ArrayOfourArea">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ourArea" nillable="true" type="tns:ourArea" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfourArea" nillable="true" type="tns:ArrayOfourArea" />
+  <xs:complexType name="SchoolMessage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AreaSchoolMessage">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SchoolMessage" nillable="true" type="tns:SchoolMessage" />
+  <xs:complexType name="AreaMessage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DistrictAreaMessage">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AreaMessage" nillable="true" type="tns:AreaMessage" />
+  <xs:complexType name="ArrayOfSchoolMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SchoolMessage" nillable="true" type="tns:SchoolMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSchoolMessage" nillable="true" type="tns:ArrayOfSchoolMessage" />
+  <xs:complexType name="ArrayOfAreaMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AreaMessage" nillable="true" type="tns:AreaMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAreaMessage" nillable="true" type="tns:ArrayOfAreaMessage" />
+  <xs:complexType name="ArrayOfourEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ourEntity" nillable="true" type="tns:ourEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfourEntity" nillable="true" type="tns:ArrayOfourEntity" />
+  <xs:complexType name="ArrayOfourProvincial">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ourProvincial" nillable="true" type="tns:ourProvincial" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfourProvincial" nillable="true" type="tns:ArrayOfourProvincial" />
+</xs:schema>

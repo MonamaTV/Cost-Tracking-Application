@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NSNPService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:55383/NSNPService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:55383/NSNPService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:55383/NSNPService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/School_Service" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INSNPService_LoginEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginEntity" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_LoginEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_RegisterEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterEntity" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_RegisterEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_EditSchool_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditSchool" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_EditSchool_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditSchoolResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetSchool_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchool" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetSchool_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchoolResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetProvince_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProvince" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetProvince_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProvinceResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_ExtendedDistrictReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExtendedDistrictReport" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_ExtendedDistrictReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExtendedDistrictReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_EditProvince_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditProvince" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_EditProvince_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditProvinceResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetLevel_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLevel" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetLevel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLevelResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetEMIS_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEMIS" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetEMIS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEMISResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_AddSchoolReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSchoolReport" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_AddSchoolReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSchoolReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetSchoolReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchoolReport" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetSchoolReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchoolReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_EditScholReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditScholReport" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_EditScholReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditScholReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_DeleteSchoolReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSchoolReport" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_DeleteSchoolReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSchoolReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetSchoolReports_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchoolReports" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetSchoolReports_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchoolReportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetFileInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileInformation" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetFileInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetSchoolReportsByAD_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchoolReportsByAD" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetSchoolReportsByAD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchoolReportsByADResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetArea_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetArea" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetArea_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAreaResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_EditArea_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditArea" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_EditArea_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditAreaResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetDistrict_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistrict" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetDistrict_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistrictResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_EditDistrict_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditDistrict" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_EditDistrict_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditDistrictResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetAreaReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAreaReport" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetAreaReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAreaReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_AddAreaReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAreaReport" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_AddAreaReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAreaReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetSchools_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchools" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetSchools_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchoolsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetDistrictsForArea_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistrictsForArea" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetDistrictsForArea_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistrictsForAreaResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetAreasForSchool_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAreasForSchool" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetAreasForSchool_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAreasForSchoolResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GenerateAreaReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateAreaReport" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GenerateAreaReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateAreaReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GenerateDistrictReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateDistrictReport" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GenerateDistrictReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateDistrictReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_VerifyReportAuth_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyReportAuth" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_VerifyReportAuth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyReportAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_AddSchoolMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSchoolMessage" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_AddSchoolMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSchoolMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_AddAreaMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAreaMessage" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_AddAreaMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAreaMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_DeleteMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMessage" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_DeleteMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetSchoolMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchoolMessages" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetSchoolMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchoolMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetAreaMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAreaMessages" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetAreaMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAreaMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetDistrictName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistrictName" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetDistrictName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistrictNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_SortedSchoolSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:SortedSchoolSummary" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_SortedSchoolSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SortedSchoolSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetAreas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAreas" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetAreas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetAreaNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAreaNumber" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetAreaNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAreaNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_DisplayDistrictName_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayDistrictName" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_DisplayDistrictName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayDistrictNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GenerateDistrictQuarterReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateDistrictQuarterReport" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GenerateDistrictQuarterReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateDistrictQuarterReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_ExtendedQuarterReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExtendedQuarterReport" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_ExtendedQuarterReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExtendedQuarterReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_DisconnectSchool_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisconnectSchool" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_DisconnectSchool_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisconnectSchoolResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_DisconnectArea_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisconnectArea" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_DisconnectArea_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisconnectAreaResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetCircuitsByDistricts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCircuitsByDistricts" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetCircuitsByDistricts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCircuitsByDistrictsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetCicuitsByProvince_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCicuitsByProvince" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetCicuitsByProvince_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCicuitsByProvinceResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetDistrictsByProvince_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistrictsByProvince" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetDistrictsByProvince_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistrictsByProvinceResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetSchoolsByCircuit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchoolsByCircuit" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetSchoolsByCircuit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchoolsByCircuitResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetAllProvinces_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProvinces" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetAllProvinces_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProvincesResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetProvinceByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProvinceByID" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_GetProvinceByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProvinceByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_LogData_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogData" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_LogData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_TestFunction_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestFunction" />
+  </wsdl:message>
+  <wsdl:message name="INSNPService_TestFunction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestFunctionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="INSNPService">
+    <wsdl:operation name="LoginEntity">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/LoginEntity" message="tns:INSNPService_LoginEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/LoginEntityResponse" message="tns:INSNPService_LoginEntity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterEntity">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/RegisterEntity" message="tns:INSNPService_RegisterEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/RegisterEntityResponse" message="tns:INSNPService_RegisterEntity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditSchool">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/EditSchool" message="tns:INSNPService_EditSchool_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/EditSchoolResponse" message="tns:INSNPService_EditSchool_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchool">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetSchool" message="tns:INSNPService_GetSchool_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetSchoolResponse" message="tns:INSNPService_GetSchool_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProvince">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetProvince" message="tns:INSNPService_GetProvince_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetProvinceResponse" message="tns:INSNPService_GetProvince_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExtendedDistrictReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/ExtendedDistrictReport" message="tns:INSNPService_ExtendedDistrictReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/ExtendedDistrictReportResponse" message="tns:INSNPService_ExtendedDistrictReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditProvince">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/EditProvince" message="tns:INSNPService_EditProvince_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/EditProvinceResponse" message="tns:INSNPService_EditProvince_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLevel">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetLevel" message="tns:INSNPService_GetLevel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetLevelResponse" message="tns:INSNPService_GetLevel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEMIS">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetEMIS" message="tns:INSNPService_GetEMIS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetEMISResponse" message="tns:INSNPService_GetEMIS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSchoolReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/AddSchoolReport" message="tns:INSNPService_AddSchoolReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/AddSchoolReportResponse" message="tns:INSNPService_AddSchoolReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetSchoolReport" message="tns:INSNPService_GetSchoolReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetSchoolReportResponse" message="tns:INSNPService_GetSchoolReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditScholReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/EditScholReport" message="tns:INSNPService_EditScholReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/EditScholReportResponse" message="tns:INSNPService_EditScholReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSchoolReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/DeleteSchoolReport" message="tns:INSNPService_DeleteSchoolReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/DeleteSchoolReportResponse" message="tns:INSNPService_DeleteSchoolReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolReports">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetSchoolReports" message="tns:INSNPService_GetSchoolReports_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetSchoolReportsResponse" message="tns:INSNPService_GetSchoolReports_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetFileInformation" message="tns:INSNPService_GetFileInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetFileInformationResponse" message="tns:INSNPService_GetFileInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolReportsByAD">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetSchoolReportsByAD" message="tns:INSNPService_GetSchoolReportsByAD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetSchoolReportsByADResponse" message="tns:INSNPService_GetSchoolReportsByAD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArea">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetArea" message="tns:INSNPService_GetArea_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetAreaResponse" message="tns:INSNPService_GetArea_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditArea">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/EditArea" message="tns:INSNPService_EditArea_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/EditAreaResponse" message="tns:INSNPService_EditArea_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrict">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetDistrict" message="tns:INSNPService_GetDistrict_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetDistrictResponse" message="tns:INSNPService_GetDistrict_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditDistrict">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/EditDistrict" message="tns:INSNPService_EditDistrict_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/EditDistrictResponse" message="tns:INSNPService_EditDistrict_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAreaReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetAreaReport" message="tns:INSNPService_GetAreaReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetAreaReportResponse" message="tns:INSNPService_GetAreaReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAreaReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/AddAreaReport" message="tns:INSNPService_AddAreaReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/AddAreaReportResponse" message="tns:INSNPService_AddAreaReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchools">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetSchools" message="tns:INSNPService_GetSchools_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetSchoolsResponse" message="tns:INSNPService_GetSchools_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrictsForArea">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetDistrictsForArea" message="tns:INSNPService_GetDistrictsForArea_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetDistrictsForAreaResponse" message="tns:INSNPService_GetDistrictsForArea_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAreasForSchool">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetAreasForSchool" message="tns:INSNPService_GetAreasForSchool_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetAreasForSchoolResponse" message="tns:INSNPService_GetAreasForSchool_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateAreaReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GenerateAreaReport" message="tns:INSNPService_GenerateAreaReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GenerateAreaReportResponse" message="tns:INSNPService_GenerateAreaReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateDistrictReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GenerateDistrictReport" message="tns:INSNPService_GenerateDistrictReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GenerateDistrictReportResponse" message="tns:INSNPService_GenerateDistrictReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyReportAuth">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/VerifyReportAuth" message="tns:INSNPService_VerifyReportAuth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/VerifyReportAuthResponse" message="tns:INSNPService_VerifyReportAuth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSchoolMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/AddSchoolMessage" message="tns:INSNPService_AddSchoolMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/AddSchoolMessageResponse" message="tns:INSNPService_AddSchoolMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAreaMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/AddAreaMessage" message="tns:INSNPService_AddAreaMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/AddAreaMessageResponse" message="tns:INSNPService_AddAreaMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/DeleteMessage" message="tns:INSNPService_DeleteMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/DeleteMessageResponse" message="tns:INSNPService_DeleteMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetSchoolMessages" message="tns:INSNPService_GetSchoolMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetSchoolMessagesResponse" message="tns:INSNPService_GetSchoolMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAreaMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetAreaMessages" message="tns:INSNPService_GetAreaMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetAreaMessagesResponse" message="tns:INSNPService_GetAreaMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrictName">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetDistrictName" message="tns:INSNPService_GetDistrictName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetDistrictNameResponse" message="tns:INSNPService_GetDistrictName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SortedSchoolSummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/SortedSchoolSummary" message="tns:INSNPService_SortedSchoolSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/SortedSchoolSummaryResponse" message="tns:INSNPService_SortedSchoolSummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAreas">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetAreas" message="tns:INSNPService_GetAreas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetAreasResponse" message="tns:INSNPService_GetAreas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAreaNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetAreaNumber" message="tns:INSNPService_GetAreaNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetAreaNumberResponse" message="tns:INSNPService_GetAreaNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayDistrictName">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/DisplayDistrictName" message="tns:INSNPService_DisplayDistrictName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/DisplayDistrictNameResponse" message="tns:INSNPService_DisplayDistrictName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateDistrictQuarterReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GenerateDistrictQuarterReport" message="tns:INSNPService_GenerateDistrictQuarterReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GenerateDistrictQuarterReportResponse" message="tns:INSNPService_GenerateDistrictQuarterReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExtendedQuarterReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/ExtendedQuarterReport" message="tns:INSNPService_ExtendedQuarterReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/ExtendedQuarterReportResponse" message="tns:INSNPService_ExtendedQuarterReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisconnectSchool">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/DisconnectSchool" message="tns:INSNPService_DisconnectSchool_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/DisconnectSchoolResponse" message="tns:INSNPService_DisconnectSchool_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisconnectArea">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/DisconnectArea" message="tns:INSNPService_DisconnectArea_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/DisconnectAreaResponse" message="tns:INSNPService_DisconnectArea_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCircuitsByDistricts">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetCircuitsByDistricts" message="tns:INSNPService_GetCircuitsByDistricts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetCircuitsByDistrictsResponse" message="tns:INSNPService_GetCircuitsByDistricts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCicuitsByProvince">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetCicuitsByProvince" message="tns:INSNPService_GetCicuitsByProvince_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetCicuitsByProvinceResponse" message="tns:INSNPService_GetCicuitsByProvince_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrictsByProvince">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetDistrictsByProvince" message="tns:INSNPService_GetDistrictsByProvince_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetDistrictsByProvinceResponse" message="tns:INSNPService_GetDistrictsByProvince_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolsByCircuit">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetSchoolsByCircuit" message="tns:INSNPService_GetSchoolsByCircuit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetSchoolsByCircuitResponse" message="tns:INSNPService_GetSchoolsByCircuit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProvinces">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetAllProvinces" message="tns:INSNPService_GetAllProvinces_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetAllProvincesResponse" message="tns:INSNPService_GetAllProvinces_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProvinceByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/GetProvinceByID" message="tns:INSNPService_GetProvinceByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/GetProvinceByIDResponse" message="tns:INSNPService_GetProvinceByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogData">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/LogData" message="tns:INSNPService_LogData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/LogDataResponse" message="tns:INSNPService_LogData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestFunction">
+      <wsdl:input wsaw:Action="http://tempuri.org/INSNPService/TestFunction" message="tns:INSNPService_TestFunction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INSNPService/TestFunctionResponse" message="tns:INSNPService_TestFunction_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_INSNPService" type="tns:INSNPService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoginEntity">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/LoginEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterEntity">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/RegisterEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditSchool">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/EditSchool" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchool">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetSchool" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProvince">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetProvince" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExtendedDistrictReport">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/ExtendedDistrictReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditProvince">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/EditProvince" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLevel">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetLevel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEMIS">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetEMIS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSchoolReport">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/AddSchoolReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolReport">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetSchoolReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditScholReport">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/EditScholReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSchoolReport">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/DeleteSchoolReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolReports">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetSchoolReports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileInformation">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetFileInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolReportsByAD">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetSchoolReportsByAD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArea">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetArea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditArea">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/EditArea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrict">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetDistrict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditDistrict">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/EditDistrict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAreaReport">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetAreaReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAreaReport">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/AddAreaReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchools">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetSchools" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrictsForArea">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetDistrictsForArea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAreasForSchool">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetAreasForSchool" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateAreaReport">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GenerateAreaReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateDistrictReport">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GenerateDistrictReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyReportAuth">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/VerifyReportAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSchoolMessage">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/AddSchoolMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAreaMessage">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/AddAreaMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessage">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/DeleteMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolMessages">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetSchoolMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAreaMessages">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetAreaMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrictName">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetDistrictName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SortedSchoolSummary">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/SortedSchoolSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAreas">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAreaNumber">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetAreaNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayDistrictName">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/DisplayDistrictName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateDistrictQuarterReport">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GenerateDistrictQuarterReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExtendedQuarterReport">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/ExtendedQuarterReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisconnectSchool">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/DisconnectSchool" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisconnectArea">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/DisconnectArea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCircuitsByDistricts">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetCircuitsByDistricts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCicuitsByProvince">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetCicuitsByProvince" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrictsByProvince">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetDistrictsByProvince" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolsByCircuit">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetSchoolsByCircuit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProvinces">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetAllProvinces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProvinceByID">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/GetProvinceByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogData">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/LogData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestFunction">
+      <soap:operation soapAction="http://tempuri.org/INSNPService/TestFunction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NSNPService">
+    <wsdl:port name="BasicHttpBinding_INSNPService" binding="tns:BasicHttpBinding_INSNPService">
+      <soap:address location="http://localhost:55383/NSNPService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

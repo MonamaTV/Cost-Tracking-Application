@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="NSNP_Database" Class="DataConnectionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(localdb)\ProjectsV13;AttachDbFilename=|DataDirectory|\NSNP_Database.mdf;Initial Catalog=NSNP_Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="NSNP_DatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.A_Report" Member="A_Reports">
+    <Type Name="A_Report">
+      <Column Name="R_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Month" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Submission_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BankCharges" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Allocation" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Expenditure" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="A_No" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Schools_Submitted" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="AreaOffice_A_Report" Member="AreaOffice" ThisKey="A_No" OtherKey="A_No" Type="AreaOffice" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AreaOffice" Member="AreaOffices">
+    <Type Name="AreaOffice">
+      <Column Name="A_No" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="A_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="A_Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="D_No" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="A_Cellphone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="A_Tellphone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="A_Manager" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="A_NumSchools" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="AreaOffice_A_Report" Member="A_Reports" ThisKey="A_No" OtherKey="A_No" Type="A_Report" />
+      <Association Name="AreaOffice_AreaSchoolMessage" Member="AreaSchoolMessages" ThisKey="A_No" OtherKey="A_No" Type="AreaSchoolMessage" />
+      <Association Name="AreaOffice_School" Member="Schools" ThisKey="A_No" OtherKey="A_No" Type="School" />
+      <Association Name="District_AreaOffice" Member="District" ThisKey="D_No" OtherKey="D_No" Type="District" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AreaSchoolMessage" Member="AreaSchoolMessages">
+    <Type Name="AreaSchoolMessage">
+      <Column Name="A_No" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="M_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="AreaOffice_AreaSchoolMessage" Member="AreaOffice" ThisKey="A_No" OtherKey="A_No" Type="AreaOffice" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.D_Report" Member="D_Reports">
+    <Type Name="D_Report">
+      <Column Name="R_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Month" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="BankCharges" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Allocation" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Expenditure" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="D_No" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="District_D_Report" Member="District" ThisKey="D_No" OtherKey="D_No" Type="District" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.District" Member="Districts">
+    <Type Name="District">
+      <Column Name="D_No" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="D_Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="D_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="P_No" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="D_Tellphone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="D_Cellphone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="D_Manager" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="D_NumAreas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="District_AreaOffice" Member="AreaOffices" ThisKey="D_No" OtherKey="D_No" Type="AreaOffice" />
+      <Association Name="District_D_Report" Member="D_Reports" ThisKey="D_No" OtherKey="D_No" Type="D_Report" />
+      <Association Name="District_DistrictAreaMessage" Member="DistrictAreaMessages" ThisKey="D_No" OtherKey="D_No" Type="DistrictAreaMessage" />
+      <Association Name="Provincial_District" Member="Provincial" ThisKey="P_No" OtherKey="P_No" Type="Provincial" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DistrictAreaMessage" Member="DistrictAreaMessages">
+    <Type Name="DistrictAreaMessage">
+      <Column Name="D_No" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="M_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="District_DistrictAreaMessage" Member="District" ThisKey="D_No" OtherKey="D_No" Type="District" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FileInformation" Member="FileInformations">
+    <Type Name="FileInformation">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ContentType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ContentLength" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="EMIS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="School_FileInformation" Member="School" ThisKey="EMIS" OtherKey="EMIS" Type="School" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Provincial" Member="Provincials">
+    <Type Name="Provincial">
+      <Column Name="P_No" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="P_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="p_Manageer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="P_Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="P_Tellphone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="P_Cellphone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Num_Areas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Num_Districts" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Provincial_District" Member="Districts" ThisKey="P_No" OtherKey="P_No" Type="District" />
+      <Association Name="Provincial_School" Member="Schools" ThisKey="P_No" OtherKey="P_No" Type="School" />
+    </Type>
+  </Table>
+  <Table Name="dbo.S_Report" Member="S_Reports">
+    <Type Name="S_Report">
+      <Column Name="R_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EMIS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Submission_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Month" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Food" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Greenies" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Gas_Wood" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Honorarium" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BankCharges" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Allocation" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Expenditure" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NumDays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AvgLearnerFed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AvgBudget" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ClosingBalance" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="School_S_Report" Member="School" ThisKey="EMIS" OtherKey="EMIS" Type="School" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.School" Member="Schools">
+    <Type Name="School">
+      <Column Name="EMIS" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="S_Name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="S_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="S_PrincipalName" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="S_Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="S_TellNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="S_No_learners" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="P_No" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="S_CellPhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="A_No" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="S_Budget" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="School_FileInformation" Member="FileInformations" ThisKey="EMIS" OtherKey="EMIS" Type="FileInformation" />
+      <Association Name="School_S_Report" Member="S_Reports" ThisKey="EMIS" OtherKey="EMIS" Type="S_Report" />
+      <Association Name="AreaOffice_School" Member="AreaOffice" ThisKey="A_No" OtherKey="A_No" Type="AreaOffice" IsForeignKey="true" />
+      <Association Name="Provincial_School" Member="Provincial" ThisKey="P_No" OtherKey="P_No" Type="Provincial" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Logins" Member="Logins">
+    <Type Name="Login">
+      <Column Name="Level_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

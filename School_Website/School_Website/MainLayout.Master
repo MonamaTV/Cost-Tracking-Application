@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainLayout.master.cs" Inherits="School_Website.MainLayout" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+        <asp:ContentPlaceHolder ID="title" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+    <!-- Bootstrap CSS -->
+    <script src="script/script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .nav {
+           height: 20px !important;
+           padding: 0;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <header class="myHeader shadow-sm">
+        <nav class="navbar d-block navbar-expand-sm">
+
+            <%--<a class="navbar-brand" href="Login.aspx"><img src="images/North_West.png" alt=""/></a>--%>
+            
+            <div class=" collapse navbar-collapse" id="myNavigation">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="../Profile.aspx" class="nav-link btnRegister"><i class="fas fa-cog"></i> Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+     <div class="side-menu">
+        <h5 class="text-center headings">FS Reports</h5>
+        <div class="menu">
+            <ul>
+                <li id="home" runat="server" >
+                    <a href="/Home.aspx"> <img src="../images/increasing-stocks-graphic.svg" alt=""> Reports</a>
+                </li>
+                <li id="profile" runat="server">
+                    <a href="/Profile.aspx"><img src="../images/user.svg" alt=""> Profile</a>
+                </li>  
+                <li id="entry" runat="server">
+                    <a href="/Entry.aspx"><img src="../images/round-add-button.svg" alt=""> Add Report</a>
+                </li>
+                <li id="annoucement" runat="server">
+                    <a href="/Annoucement.aspx"><img src="../images/consulting-message.svg" alt=""> Notices <i class="fas fa-caret-down" id="drop_icon" runat="server"></i></a>
+                    <ul class="drop-message" id="drop_menu" runat="server">                     
+                        <li><a href="/Annoucement.aspx?Sent=true"> &UpArrow;sent</a></li>         
+                        <li><a href="/Annoucement.aspx?Received=true"> &downarrow;received</a></li>                  
+                    </ul>
+                </li>             
+                <li id="school" runat="server">
+                    <a href="/Schools.aspx" runat="server" id="entities"><img src="../images/clipboard.svg" alt="" > <span id="nameEnt" runat="server">Schools</span></a>
+                </li>
+                <li>
+                    <a href="/Signout.aspx"><img src="../images/locked.svg" alt=""> Sign Out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <form id="form1" runat="server" style="height: 0;margin-top:-13px;" enctype="multipart/form-data" method="post">
+        <div class="main-content">
+            <div class="container">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                   
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+    <script>
+        let drop = document.getElementById('annoucement');
+        let ul = document.getElementById('drop_menu');
+
+        function dropMenu() {
+            if (ul.style.display === 'none')
+                ul.style.display = 'block';
+            else
+                ul.style.display = 'none';
+        }
+        drop.addEventListener('click', dropMenu);
+    </script>
+</body>
+</html>
