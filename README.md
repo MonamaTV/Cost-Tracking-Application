@@ -34,5 +34,5 @@ The aim of the application is to minimize page usage and time taken to record ex
 * Ideally, all the reports from the school level to district level reach the provincial level electronically
 
 ## Admin
-* Has the SUDO privilenges😁
+* Has the SUDO privileges😁
 
