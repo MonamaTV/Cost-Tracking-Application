@@ -14,7 +14,7 @@ The aim of the application is to minimize page usage and time taken to record ex
 ## Functionality for Schools
 * Input the amounts they spent on the required fields
 * Also the schools are supposed to upload documents to validate the inputs they provided
-* The schools can also see the annoucements made by the circuits they are under(e.g., if school A is under circuit B, they cannot see the annoucements made by circuit B)
+* The schools can also see the annoucements made by the circuits they are under(e.g., if school A is under circuit B, they cannot see the annoucements made by circuit C)
 * They can also download the data they uploaded to the system
 
 ## Functionality for Circuit level
